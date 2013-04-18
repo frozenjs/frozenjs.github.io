@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[FrozenJS Blog]]></title><description><![CDATA[Blog for the FrozenJS HTML5 Game Engine]]></description><link>http://blog.frozenjs.com</link><generator>NodeJS RSS Module</generator><lastBuildDate>Thu, 18 Apr 2013 21:37:35 GMT</lastBuildDate><atom:link href="http://blog.frozenjs.com/index.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[welcome]]></title><description><![CDATA[<p>The FrozenJS Blog is live!</p>
+<h2>What is it for?</h2>
+<p>We needed a place to write articles showing how to use Frozen or best practices, so we made this blog.</p>
+<p>Not to mention, we want to spotlight things we are doing, or being done by others, with Frozen.</p>
+]]></description><link>http://blog.frozenjs.com/./2013-04-18-welcome.html</link><guid isPermaLink="true">http://blog.frozenjs.com/./2013-04-18-welcome.html</guid><dc:creator><![CDATA[Iced Dev]]></dc:creator><pubDate>Thu, 18 Apr 2013 00:00:00 GMT</pubDate></item></channel></rss>
