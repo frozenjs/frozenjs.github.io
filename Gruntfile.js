@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     markdown: {
       options: {
         author: 'Iced Dev',
-        title: 'FrozenJS Blog',
+        title: 'Frozen Blog',
         description: 'Blog for the FrozenJS HTML5 Game Engine',
         url: 'http://blog.frozenjs.com',
         baseUrl: 'http://frozenjs.com',
