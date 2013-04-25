@@ -1,6 +1,3 @@
-# Building Breakout with FrozenJS
-
--------------------------
 
 ## Breakouts is the TodoMVC of html5 games.
 
