@@ -363,6 +363,10 @@ footer {
 }
 
 /* Blog styles */
+.post {
+  margin-bottom: 60px;
+}
+
 .post-date {
   text-transform: capitalize;
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Frozen Blog]]></title><description><![CDATA[Blog for the FrozenJS HTML5 Game Engine]]></description><link>http://blog.frozenjs.com</link><generator>NodeJS RSS Module</generator><lastBuildDate>Thu, 25 Apr 2013 02:46:59 GMT</lastBuildDate><atom:link href="http://blog.frozenjs.com/index.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[welcome]]></title><description><![CDATA[<p>The FrozenJS Blog is live!</p>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Frozen Blog]]></title><description><![CDATA[Blog for the FrozenJS HTML5 Game Engine]]></description><link>http://blog.frozenjs.com</link><generator>NodeJS RSS Module</generator><lastBuildDate>Thu, 25 Apr 2013 19:33:25 GMT</lastBuildDate><atom:link href="http://blog.frozenjs.com/index.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[welcome]]></title><description><![CDATA[<p>The FrozenJS Blog is live!</p>
 <h2>What is it for?</h2>
 <p>We needed a place to write articles showing how to use Frozen or best practices, so we made this blog.</p>
 <p>Not to mention, we want to spotlight things we are doing, or being done by others, with Frozen.</p>
-]]></description><link>http://blog.frozenjs.com/./2013-04-18-welcome.html</link><guid isPermaLink="true">http://blog.frozenjs.com/./2013-04-18-welcome.html</guid><dc:creator><![CDATA[Iced Dev]]></dc:creator><pubDate>Thu, 18 Apr 2013 00:00:00 GMT</pubDate></item><item><title><![CDATA[building breakouts with_frozenjs]]></title><description><![CDATA[<h2>Breakouts is the TodoMVC of html5 games.</h2>
+]]></description><link>http://blog.frozenjs.com/./2013-04-18-welcome.html</link><guid isPermaLink="true">http://blog.frozenjs.com/./2013-04-18-welcome.html</guid><dc:creator><![CDATA[Iced Dev]]></dc:creator><pubDate>Thu, 18 Apr 2013 00:00:00 GMT</pubDate></item><item><title><![CDATA[building breakouts with_frozenjs]]></title><description><![CDATA[<h2>Breakouts is the TodoMVC of HTML5 games.</h2>
 <p><img src="images/breakouts_logo.png" alt="Breakouts"></p>
 <p>If you&#39;re looking for a framework for building Single Page Applications,  you&#39;ll want to visit the <a href="http://todomvc.com/">TodoMVC project</a>.
 TodoMVC is a collection of several implemenations of a simple Todo web applications using various toolkits and frameworks.</p>
@@ -13,8 +13,10 @@ TodoMVC is a collection of several implemenations of a simple Todo web applicati
 <h2>The FrozenJS game engine.</h2>
 <p><img src="images/frozen_logo.png" alt="Breakouts"></p>
 <p>From our website:</p>
+<blockquote>
 <p><em>Frozen is an open-source HTML5 game engine delivering ease-of-use, rapid development through tooling and modularity.</em></p>
 <p><em>Our goal is to apply techniques used in building modern webapps to game development, such as AMD modules, dependency management, build process, and project scaffolding.</em></p>
+</blockquote>
 <p>TL;DR;  FrozenJS rocks.</p>
 <p>Let&#39;s get started...</p>
 <hr>
@@ -26,7 +28,7 @@ TodoMVC is a collection of several implemenations of a simple Todo web applicati
 <p><code>volo create MyGame frozenjs/boilerplate/boxgame</code></p>
 <p>This did a few things for you:</p>
 <p>It pulled in all the dependencies you need and put them into a deps folder.
-Created the HTML, CSS, and javascript files you&#39;ll need to get started writing your code.
+Created the HTML, CSS, and JavaScript files you&#39;ll need to get started writing your code.
 Sets up development configuration for linting, testing, and packaging</p>
 <p>Now launch your game!</p>
 <p><code>volo grunt</code></p>
@@ -36,10 +38,10 @@ Sets up development configuration for linting, testing, and packaging</p>
 <h2>Breakout code layout</h2>
 <p><img src="images/modularize_all_the_js.png" alt="Modularize ALL the things!"></p>
 <p>The main entry point to the game is the game.js module.</p>
-<pre><code class="lang-javascript"><span class="comment">//pull in some dependences...</span>
+<pre><code class="lang-JavaScript"><span class="regexp">//</span>pull <span class="keyword">in</span> some dependences...
 
-<span class="keyword">var</span> game = <span class="keyword">new</span> BoxGame({
-<span class="comment">//a bit of intialization...</span>
+<span class="reserved">var</span> game = <span class="keyword">new</span> BoxGame({
+<span class="regexp">//</span>a bit <span class="keyword">of</span> intialization...
 
 game.run();</code></pre>
 <p>We pull in dependenices, configure a game instance, do a bit of initialization, and launch.</p>
@@ -49,11 +51,11 @@ game.run();</code></pre>
 <li>game classes: Ball, Brick, Paddle, etc.</li>
 <li>Also modules containing data for game levels and physics.</li>
 </ul>
-<p>Aside from javascript and html, we have a resources folder containing the images and sounds from the original Breakouts project.</p>
+<p>Aside from JavaScript and HTML, we have a resources folder containing the images and sounds from the original Breakouts project.</p>
 <hr>
 <h2>Breakout specific physics and logic</h2>
-<p>To simplify things we deferred the physics calculations of the game to box2d.</p>
-<p>This allowed us to use the Frozen box2d physics editor.  We dropped the pre-rendered game background into the editor and simply traced the walls in the game as static rectangles.  That gave us the JSON we used in the walls.js module that we add to the box2d world intance in the game.</p>
+<p>To simplify things we deferred the physics calculations of the game to <a href="https://code.google.com/p/box2dweb/">box2d</a>.</p>
+<p>This allowed us to use the <a href="http://phated.github.io/frozen-editor/">Frozen box2d physics editor</a>.  We dropped the pre-rendered game background into the editor and simply traced the walls in the game as static rectangles.  That gave us the JSON we used in the walls.js module that we add to the box2d world instance in the game.</p>
 <h3>Physics tweaks:</h3>
 <p>Although it might appear that the balls fall towards the paddle in Breakout, we really don&#39;t wan&#39;t a realistic gravity set in our enviroment.  In the game the ball moves in straight lines.  With gravity the ball would curve back downward after being propelled upward from the paddle.</p>
 <p>The restitution property for balls in the game is set to 1.0.  This ensures that the ball will bounce back off of bricks and walls at the same force that it struck them with.</p>
@@ -66,24 +68,24 @@ game.run();</code></pre>
 <p>To solve this, when there&#39;s a collision with a ball and the paddle we check the distance from the center of the ball to the center of the paddle and apply an upward impulse between -45 degrees (left corner of paddle) to +45 degrees (right corner).</p>
 <hr>
 <h2>Packaging it all up</h2>
-<p>While developing, having a bunch of little modules is great.  We can separate our logic into small re-usable components.  However when we&#39;re ready to share our awesome game, we want to bundle the javascript into a single minified file so that it quickly loads into the browser.</p>
+<p>While developing, having a bunch of little modules is great.  We can separate our logic into small re-usable components.  However when we&#39;re ready to share our awesome game, we want to bundle the JavaScript into a single minified file so that it quickly loads into the browser.</p>
 <p>To do this we simply have grunt run the build process:</p>
-<p><code>grunt build</code></p>
+<p><code>volo grunt build</code></p>
 <p>That command outputs all of our game&#39;s code and dependencies into a single game.js file in the dist folder.
 The HTML file that loads the game actually tries to use that single file first, so you don&#39;t have to make any changes to the HTML to load this compressed version.</p>
 <p>If you want to remove the compressed version and continuing developing your modules you can run:</p>
-<p><code>grunt clean:dist</code></p>
+<p><code>volo grunt clean:dist</code></p>
 <hr>
 <h2>Conclusion</h2>
 <p>We learned a few things.</p>
-<h3>Use lodash</h3>
-<p><a href="http://lodash.com/">Lodash</a> is a great general purpose javascript utility library.  It has everything that underscore has, but with much better performance.</p>
-<p>Sixteen milliseconds to handle user input, update game state, and render to the screen is not very much time. You&#39;ll want to make sure that common low-level javascript tasks perform as quickly as possible.</p>
-<p>Also, we tended to often re-imlpement certain javascript functions in various games. With lodash we were able to <a href="http://en.wikipedia.org/wiki/Don&#39;t_repeat_yourself">DRY</a> up quite a bit of code.  Because it supports <a href="http://requirejs.org/docs/whyamd.html">AMD</a>, we were able to easily include it in our project and build it into our minified javascript output.</p>
-<p>Lodash will be built into the next version of FrozenJS.</p>
+<h3>Use Lo-Dash</h3>
+<p><a href="http://lodash.com/">Lo-Dash</a> is a great general purpose JavaScript utility library.  It has everything that underscore has, but with much better performance.</p>
+<p>Sixteen milliseconds to handle user input, update game state, and render to the screen is not very much time. You&#39;ll want to make sure that common low-level JavaScript tasks perform as quickly as possible.</p>
+<p>Also, we tended to often re-imlpement certain JavaScript functions in various games. With Lo-Dash we were able to <a href="http://en.wikipedia.org/wiki/Don&#39;t_repeat_yourself">DRY</a> up quite a bit of code.  Because it supports <a href="http://requirejs.org/docs/whyamd.html">AMD</a>, we were able to easily include it in our project and build it into our minified JavaScript output.</p>
+<p>Lo-Dash will be part the next version of FrozenJS.</p>
 <h3>Screens/Scenes</h3>
 <p>Although it uses the same background, there&#39;s a few state changes in the game:  The start screen, the game playing, and the game over screen.</p>
-<p>This isn&#39;t difficult to handle in the update and draw methods of this simple game, however we feel that it could be a bit easier.  In the next version of FrozenJS we&#39;ll have something to clean that type of code up a bit.</p>
+<p>This isn&#39;t difficult to handle in the update and draw methods of this simple game, however we feel that it could be a bit easier.  This is something we&#39;ll be looking into for future versions of the game engine.</p>
 <h3>This was a fun experiment.</h3>
 <p> It showed where FrozenJS shines as well as places that things could be a little better.  If you want to get into HTML5 game development, our <a href="https://github.com/iceddev/breakouts">Breakouts source</a> is not a bad place to start.  If you&#39;re creating a game engine, I encourage you to implement Breakouts.</p>
 ]]></description><link>http://blog.frozenjs.com/./2013-04-25-building-breakouts-with_frozenjs.html</link><guid isPermaLink="true">http://blog.frozenjs.com/./2013-04-25-building-breakouts-with_frozenjs.html</guid><dc:creator><![CDATA[Iced Dev]]></dc:creator><pubDate>Thu, 25 Apr 2013 00:00:00 GMT</pubDate></item></channel></rss>

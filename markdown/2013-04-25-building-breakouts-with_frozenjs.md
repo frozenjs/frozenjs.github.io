@@ -1,5 +1,5 @@
 
-## Breakouts is the TodoMVC of html5 games.
+## Breakouts is the TodoMVC of HTML5 games.
 
 ![Breakouts](images/breakouts_logo.png)
 
@@ -20,9 +20,9 @@ As of this writing, the [FrozenJS implementation](http://city41.github.io/breako
 
 From our website:
 
-*Frozen is an open-source HTML5 game engine delivering ease-of-use, rapid development through tooling and modularity.*
+>*Frozen is an open-source HTML5 game engine delivering ease-of-use, rapid development through tooling and modularity.*
 
-*Our goal is to apply techniques used in building modern webapps to game development, such as AMD modules, dependency management, build process, and project scaffolding.*
+>*Our goal is to apply techniques used in building modern webapps to game development, such as AMD modules, dependency management, build process, and project scaffolding.*
 
 
 TL;DR;  FrozenJS rocks.
@@ -54,7 +54,7 @@ volo create MyGame frozenjs/boilerplate/boxgame
 This did a few things for you:
 
 It pulled in all the dependencies you need and put them into a deps folder.
-Created the HTML, CSS, and javascript files you'll need to get started writing your code.
+Created the HTML, CSS, and JavaScript files you'll need to get started writing your code.
 Sets up development configuration for linting, testing, and packaging
 
 Now launch your game!
@@ -75,7 +75,7 @@ ok, there isn't much of a game there yet... let's get into Breakout's code :)
 
 The main entry point to the game is the game.js module.
 
-```javascript
+```JavaScript
 //pull in some dependences...
 
 var game = new BoxGame({
@@ -94,16 +94,16 @@ The rest of the modules for the Breakout game:
 - game classes: Ball, Brick, Paddle, etc.
 - Also modules containing data for game levels and physics.
 
-Aside from javascript and html, we have a resources folder containing the images and sounds from the original Breakouts project.
+Aside from JavaScript and HTML, we have a resources folder containing the images and sounds from the original Breakouts project.
 
 
 -------------------------
 
 ## Breakout specific physics and logic
 
-To simplify things we deferred the physics calculations of the game to box2d.
+To simplify things we deferred the physics calculations of the game to [box2d](https://code.google.com/p/box2dweb/).
 
-This allowed us to use the Frozen box2d physics editor.  We dropped the pre-rendered game background into the editor and simply traced the walls in the game as static rectangles.  That gave us the JSON we used in the walls.js module that we add to the box2d world intance in the game.
+This allowed us to use the [Frozen box2d physics editor](http://phated.github.io/frozen-editor/).  We dropped the pre-rendered game background into the editor and simply traced the walls in the game as static rectangles.  That gave us the JSON we used in the walls.js module that we add to the box2d world instance in the game.
 
 ### Physics tweaks:
 
@@ -129,12 +129,12 @@ To solve this, when there's a collision with a ball and the paddle we check the 
 
 ## Packaging it all up
 
-While developing, having a bunch of little modules is great.  We can separate our logic into small re-usable components.  However when we're ready to share our awesome game, we want to bundle the javascript into a single minified file so that it quickly loads into the browser.
+While developing, having a bunch of little modules is great.  We can separate our logic into small re-usable components.  However when we're ready to share our awesome game, we want to bundle the JavaScript into a single minified file so that it quickly loads into the browser.
 
 To do this we simply have grunt run the build process:
 
 `
-grunt build
+volo grunt build
 `
 
 That command outputs all of our game's code and dependencies into a single game.js file in the dist folder.
@@ -143,7 +143,7 @@ The HTML file that loads the game actually tries to use that single file first, 
 If you want to remove the compressed version and continuing developing your modules you can run:
 
 `
-grunt clean:dist
+volo grunt clean:dist
 `
 
 ------------------------
@@ -153,21 +153,21 @@ grunt clean:dist
 
 We learned a few things.
 
-### Use lodash
+### Use Lo-Dash
 
-[Lodash](http://lodash.com/) is a great general purpose javascript utility library.  It has everything that underscore has, but with much better performance.
+[Lo-Dash](http://lodash.com/) is a great general purpose JavaScript utility library.  It has everything that underscore has, but with much better performance.
 
-Sixteen milliseconds to handle user input, update game state, and render to the screen is not very much time. You'll want to make sure that common low-level javascript tasks perform as quickly as possible.
+Sixteen milliseconds to handle user input, update game state, and render to the screen is not very much time. You'll want to make sure that common low-level JavaScript tasks perform as quickly as possible.
 
-Also, we tended to often re-imlpement certain javascript functions in various games. With lodash we were able to [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) up quite a bit of code.  Because it supports [AMD](http://requirejs.org/docs/whyamd.html), we were able to easily include it in our project and build it into our minified javascript output.
+Also, we tended to often re-imlpement certain JavaScript functions in various games. With Lo-Dash we were able to [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) up quite a bit of code.  Because it supports [AMD](http://requirejs.org/docs/whyamd.html), we were able to easily include it in our project and build it into our minified JavaScript output.
 
-Lodash will be built into the next version of FrozenJS.
+Lo-Dash will be part the next version of FrozenJS.
 
 ### Screens/Scenes
 
 Although it uses the same background, there's a few state changes in the game:  The start screen, the game playing, and the game over screen.
 
-This isn't difficult to handle in the update and draw methods of this simple game, however we feel that it could be a bit easier.  In the next version of FrozenJS we'll have something to clean that type of code up a bit.
+This isn't difficult to handle in the update and draw methods of this simple game, however we feel that it could be a bit easier.  This is something we'll be looking into for future versions of the game engine.
 
 ### This was a fun experiment.
 
