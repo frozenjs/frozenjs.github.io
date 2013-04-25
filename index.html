@@ -133,15 +133,15 @@ game.run();</code></pre>
 <p><code>grunt build</code></p>
 <p>That command outputs all of our game&#39;s code and dependencies into a single game.js file in the dist folder.
 The HTML file that loads the game actually tries to use that single file first, so you don&#39;t have to make any changes to the HTML to load this compressed version.</p>
-<p>If you want to remove the compressed version and continuing developing you modules you can run:</p>
+<p>If you want to remove the compressed version and continuing developing your modules you can run:</p>
 <p><code>grunt clean:dist</code></p>
 <hr>
 <h2>Conclusion</h2>
 <p>We learned a few things.</p>
 <h3>Use lodash</h3>
-<p><a href="http://lodash.com/">Lodash</a> is a great general purpose javascript utility library.  It has everything that underscore has, with much better performance.</p>
-<p>16 milliseconds to take input, update game state, and render is not very much time. You want to make sure that common low-level javascript tasks perform as quickly as possible.</p>
-<p>Also, we tended to often re-imlpement certain javascript functions in various games. With lodash we were able to DRY up quite a bit of code.  Because it supports AMD, we were able to easily include it in our project and build it into our minified javascript output.</p>
+<p><a href="http://lodash.com/">Lodash</a> is a great general purpose javascript utility library.  It has everything that underscore has, but with much better performance.</p>
+<p>Sixteen milliseconds to handle user input, update game state, and render to the screen is not very much time. You&#39;ll want to make sure that common low-level javascript tasks perform as quickly as possible.</p>
+<p>Also, we tended to often re-imlpement certain javascript functions in various games. With lodash we were able to <a href="http://en.wikipedia.org/wiki/Don&#39;t_repeat_yourself">DRY</a> up quite a bit of code.  Because it supports <a href="http://requirejs.org/docs/whyamd.html">AMD</a>, we were able to easily include it in our project and build it into our minified javascript output.</p>
 <p>Lodash will be built into the next version of FrozenJS.</p>
 <h3>Screens/Scenes</h3>
 <p>Although it uses the same background, there&#39;s a few state changes in the game:  The start screen, the game playing, and the game over screen.</p>

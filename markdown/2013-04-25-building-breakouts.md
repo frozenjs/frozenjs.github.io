@@ -143,7 +143,7 @@ grunt build
 That command outputs all of our game's code and dependencies into a single game.js file in the dist folder.
 The HTML file that loads the game actually tries to use that single file first, so you don't have to make any changes to the HTML to load this compressed version.
 
-If you want to remove the compressed version and continuing developing you modules you can run:
+If you want to remove the compressed version and continuing developing your modules you can run:
 
 `
 grunt clean:dist
@@ -158,11 +158,11 @@ We learned a few things.
 
 ### Use lodash
 
-[Lodash](http://lodash.com/) is a great general purpose javascript utility library.  It has everything that underscore has, with much better performance.
+[Lodash](http://lodash.com/) is a great general purpose javascript utility library.  It has everything that underscore has, but with much better performance.
 
-16 milliseconds to take input, update game state, and render is not very much time. You want to make sure that common low-level javascript tasks perform as quickly as possible.
+Sixteen milliseconds to handle user input, update game state, and render to the screen is not very much time. You'll want to make sure that common low-level javascript tasks perform as quickly as possible.
 
-Also, we tended to often re-imlpement certain javascript functions in various games. With lodash we were able to DRY up quite a bit of code.  Because it supports AMD, we were able to easily include it in our project and build it into our minified javascript output.
+Also, we tended to often re-imlpement certain javascript functions in various games. With lodash we were able to [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) up quite a bit of code.  Because it supports [AMD](http://requirejs.org/docs/whyamd.html), we were able to easily include it in our project and build it into our minified javascript output.
 
 Lodash will be built into the next version of FrozenJS.
 
