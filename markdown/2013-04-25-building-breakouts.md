@@ -93,9 +93,9 @@ We pull in dependenices, configure a game instance, do a bit of initialization, 
 
 The rest of the modules for the Breakout game:
 
-typical game functions: handle player input, update the game state, and draw to the canvas.
-game classes: Ball, Brick, Paddle, etc.
-Also modules containing data for game levels and physics.
+- typical game functions: handle player input, update the game state, and draw to the canvas.
+- game classes: Ball, Brick, Paddle, etc.
+- Also modules containing data for game levels and physics.
 
 Aside from javascript and html, we have a resources folder containing the images and sounds from the original Breakouts project.
 
