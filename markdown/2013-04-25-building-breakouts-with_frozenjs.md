@@ -6,7 +6,7 @@
 If you're looking for a framework for building Single Page Applications,  you'll want to visit the [TodoMVC project](http://todomvc.com/).
 TodoMVC is a collection of several implemenations of a simple Todo web applications using various toolkits and frameworks.
 
-Similarly, to make an informed decision on which HTML5 game engine to use you'll want to compare implementations of the same game.  Mat Greer's [Breakouts project](http://city41.github.io/breakouts/) does just that using the classic game Breakout as the target.
+Similarly, to make an informed decision on which HTML5 game engine to use you'll want to compare implementations of the same game.  Matt Greer's [Breakouts project](http://city41.github.io/breakouts/) does just that using the classic game Breakout as the target.
 
 As of this writing, the [FrozenJS implementation](http://city41.github.io/breakouts/frozen/index.html) of Breakout is the latest.  We had fun implementing the game, and think our version is particularly good.
 
